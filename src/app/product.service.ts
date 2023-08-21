@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from './product';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Product } from './product';
 })
 export class ProductService {
 
-  private urlBase = "http://localhost:9090/inventory-app/v1/products";
+  private urlBase = environment.baseUrl;
 
   constructor(private clientHttp: HttpClient) {
 
@@ -26,11 +27,11 @@ export class ProductService {
     return this.clientHttp.get<Product>(`${this.urlBase}/${id}`);
   }
 
-  updateProduct(id: Number, product : Product): Observable<Object>{
-    return this.clientHttp.put(`${this.urlBase}/${id}`,product);  
+  updateProduct(id: Number, product: Product): Observable<Object> {
+    return this.clientHttp.put(`${this.urlBase}/${id}`, product);
   }
 
-  deleteProduct(id: Number): Observable<Object>{
+  deleteProduct(id: Number): Observable<Object> {
     return this.clientHttp.delete(`${this.urlBase}/${id}`);
   }
 
