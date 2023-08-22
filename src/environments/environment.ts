@@ -1,4 +1,4 @@
 export const environment = {
-    production: true,
+    production: false,
     baseUrl: process.env["BASE_URL"] + '/inventory-app/v1'
 };
