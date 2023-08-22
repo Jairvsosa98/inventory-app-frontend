@@ -1,4 +1,4 @@
 export const environment = {
-    baseUrl : 'http://localhost:9090/inventory-app/v1/products',
+    baseUrl : 'inventories-backend-sb-production.up.railway.app/inventory-app/v1/products',
     production: false
 };
