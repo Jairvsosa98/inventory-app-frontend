@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:9090/inventory-app/v1', // Ejemplo de variable de entorno
+    apiUrl: 'http://inventories-backend-sb-production.up.railway.app/inventory-app/v1', // Ejemplo de variable de entorno
   };
