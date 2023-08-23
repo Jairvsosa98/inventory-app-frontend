@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from './product';
-import { environment } from 'src/environments/environment';
+import { environment } from './environments/environment';
 
 
 @Injectable({
@@ -10,10 +10,11 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductService {
 
-  private urlBase = environment.baseUrl;
+  private urlBase: string;
+  
 
   constructor(private clientHttp: HttpClient) {
-
+    this.urlBase = environment.apiUrl;
   }
 
   getListProducts(): Observable<Product[]> {
