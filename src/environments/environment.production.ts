@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseUrl: process.env['BASE_URL'] + '/inventory-app/v1'
+    baseUrl: 'inventories-backend-sb-production.up.railway.app/inventory-app/v1'
 };  
