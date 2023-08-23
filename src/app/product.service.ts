@@ -18,22 +18,22 @@ export class ProductService {
   }
 
   getListProducts(): Observable<Product[]> {
-    return this.clientHttp.get<Product[]>(this.urlBase);
+    return this.clientHttp.get<Product[]>(`${this.urlBase}/products`);
   }
   addProduct(product: Product): Observable<Object> {
-    return this.clientHttp.post(this.urlBase, product);
+    return this.clientHttp.post(`${this.urlBase}/products`, product);
   }
 
   getProductById(id: Number) {
-    return this.clientHttp.get<Product>(`${this.urlBase}/${id}`);
+    return this.clientHttp.get<Product>(`${this.urlBase}/products/${id}`);
   }
 
   updateProduct(id: Number, product: Product): Observable<Object> {
-    return this.clientHttp.put(`${this.urlBase}/${id}`, product);
+    return this.clientHttp.put(`${this.urlBase}/products/${id}`, product);
   }
 
   deleteProduct(id: Number): Observable<Object> {
-    return this.clientHttp.delete(`${this.urlBase}/${id}`);
+    return this.clientHttp.delete(`${this.urlBase}/products/${id}`);
   }
 
 
